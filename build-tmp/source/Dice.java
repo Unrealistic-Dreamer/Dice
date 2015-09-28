@@ -27,11 +27,11 @@ public void draw()
 	background(225);
 	fill(225,225,225);
 	rect(250,250,80,80,10);
+	//dot
+	//fill(0,0,0);
+	//ellipse (265, 265, 15, 15);
 
-	//ellipse (x, y, 5, 5);
-	//int sum = 0
-	//for (int i = 0; i <100;i++)
-
+//(x+23) for shifting
 	//your code here
 }
 public void mousePressed()
@@ -39,7 +39,7 @@ public void mousePressed()
 	
 	redraw();
 }
-class Dot //models one single dice cube
+class Dot//models one single dice cube
 {	int myX, myY;
 	//variable declarations here
 	
@@ -48,6 +48,7 @@ class Dot //models one single dice cube
 					fill(0,0,0);
 					ellipse (265, 265, 15, 15);
 				}
+
 }
 				
 	{	
@@ -63,7 +64,6 @@ class Dot //models one single dice cube
 	}
 		public void show()
 	{
-		
 		//your code here
 	}
 			
