@@ -28,9 +28,8 @@ public void draw()
 
 	dice = new Dot(0, 0);
 
-
+	//dice.roll();
 	dice.show();
-	
 }
 public void mousePressed()
 {
@@ -45,28 +44,29 @@ class Dot//models one single dice cube
 	Dot (int x, int y){
 		myX = x;
 		myY = y;
-	
+		x=250;
+		y=250;
 
 		roll();
 	}
 
 	public void roll()
 	{	
-		int rollNum =(int) (Math.random()*6)+1;
+		rollNum =(int) (Math.random()*6)+1;
 	}
 //myX,my=250
 
 		public void show()
 	{
-
+		System.out.println(rollNum);
 		fill (255);
 		rect (myX,myY,75,75,10);
 
 
 		if (rollNum==1){
 
-			fill(100,100,100);
-			ellipse (myX+33, myY+33, 15, 15); }
+			fill(0);
+			ellipse (myX+38, myY+38, 15, 15); }
 
 		if (rollNum==2){
 			fill(0,0,0);
