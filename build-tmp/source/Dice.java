@@ -22,14 +22,26 @@ public void setup()
 	noLoop();
 	background(225);
 	
+	
 }
 public void draw()
 {
+		
 
-	dice = new Dot(0, 0);
+	for (int i=80; i<=520; i+=80)
+	{
+		for (int j = 80; j<=520 ; j+=80)
+		{
+			dice = new Dot(i,j);
+			dice.show();
+		}
+	}
+
+	dice.scoreTotal();
+
 
 	//dice.roll();
-	dice.show();
+	
 }
 public void mousePressed()
 {
@@ -39,13 +51,13 @@ public void mousePressed()
 
 class Dot//models one single dice cube
 {	
-		int myX, myY,rollNum;
+		int myX, myY,rollNum,score;
 
 	Dot (int x, int y){
 		myX = x;
 		myY = y;
-		x=250;
-		y=250;
+		x=0;
+		y=0;
 
 		roll();
 	}
@@ -106,7 +118,15 @@ class Dot//models one single dice cube
 
 	}
 
+	public void scoreTotal()
+	{
+		score=0;
+        rollNum= score+rollNum;
+		fill(0);
+		textSize(25);
+		text("Total Roll:"+score,150,50);
 	}
+}
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "Dice" };
     if (passedArgs != null) {
