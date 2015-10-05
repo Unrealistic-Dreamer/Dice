@@ -4,13 +4,13 @@ void setup()
 {
 	size (600,600);
 	noLoop();
-	background(225);
+	
 	
 	
 }
 void draw()
 {
-		
+		background(225);
 
 	for (int i=80; i<=520; i+=80)
 	{
@@ -62,25 +62,33 @@ class Dot//models one single dice cube
 		if (rollNum==1){
 
 			fill(0);
-			ellipse (myX+38, myY+38, 15, 15); }
+			ellipse (myX+38, myY+38, 15, 15);
+			//score=score+1;
+			 }
 
 		if (rollNum==2){
 			fill(0,0,0);
 			ellipse (myX+15, myY+15, 15, 15);
-			ellipse (myX+61, myY+61, 15, 15); }
+			ellipse (myX+61, myY+61, 15, 15);
+		//	score=score+2; 
+	}
 		
 		 if (rollNum==3) {
 			fill(0,0,0);
 			ellipse (myX+15, myY+15, 15, 15);
 			ellipse (myX+38, myY+38, 15, 15);
-			ellipse (myX+61, myY+61, 15, 15); }
+			ellipse (myX+61, myY+61, 15, 15);
+			//score=score+3;
+			 }
 
 		if (rollNum==4){
 			fill(0,0,0);
 			ellipse (myX+15, myY+15, 15, 15);
 			ellipse (myX+15, myY+61, 15, 15);
 			ellipse (myX+61, myY+15, 15, 15);
-			ellipse (myX+61, myY+61, 15, 15);	}
+			ellipse (myX+61, myY+61, 15, 15);
+			//score=score+4;	
+		}
 
 		if (rollNum==5){
 			fill(0,0,0);
@@ -88,7 +96,9 @@ class Dot//models one single dice cube
 			ellipse (myX+15, myY+61, 15, 15);
 			ellipse (myX+61, myY+15, 15, 15);
 			ellipse (myX+61, myY+61, 15, 15);
-			ellipse (myX+38, myY+38, 15, 15); }	
+			ellipse (myX+38, myY+38, 15, 15);
+			//score=score+5; 
+		}	
 		
 		if (rollNum==6){
 			fill(0,0,0);
@@ -98,14 +108,16 @@ class Dot//models one single dice cube
 			ellipse (myX+61, myY+61, 15, 15);
 			
 			ellipse (myX+15, myY+38, 15, 15);
-			ellipse (myX+61, myY+38, 15, 15); }
+			ellipse (myX+61, myY+38, 15, 15);
+			//score=score+6; 
+		}
 
 	}
 
 	void scoreTotal()
 	{
 		score=0;
-        rollNum= score++;
+        score= score+rollNum;
 		fill(0);
 		textSize(25);
 		text("Total Roll:"+score,150,50);
