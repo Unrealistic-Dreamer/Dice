@@ -60,7 +60,7 @@ class Dot
 
 		void show()
 	{
-		//System.out.println(rollNum);
+		
 		fill (255);
 		rect (myX,myY,75,75,10);
 
