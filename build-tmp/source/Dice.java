@@ -15,6 +15,7 @@ import java.io.IOException;
 public class Dice extends PApplet {
 
 Dot dice;
+int score;
 
 public void setup()
 {
@@ -26,32 +27,37 @@ public void setup()
 }
 public void draw()
 {
-		background(225);
-
+	int rolltotal,rollNum;
+	score = 0;
+	
+	rolltotal = 0;
+	background(225);
 	for (int i=80; i<=520; i+=80)
 	{
 		for (int j = 80; j<=520 ; j+=80)
 		{
 			dice = new Dot(i,j);
 			dice.show();
+		
 		}
 	}
-
-	dice.scoreTotal();
-
-
-	//dice.roll();
+	
+		 fill(0);
+		 textSize(25);
+		 text("Total Roll:"+ score,150,50);
 	
 }
+
+
 public void mousePressed()
-{
-	
+{	
 	redraw();
 }
 
-class Dot//models one single dice cube
+
+class Dot
 {	
-		int myX, myY,rollNum,score;
+		int myX, myY,rollNum;
 
 	Dot (int x, int y){
 		myX = x;
@@ -66,11 +72,11 @@ class Dot//models one single dice cube
 	{	
 		rollNum =(int) (Math.random()*6)+1;
 	}
-//myX,my=250
+
 
 		public void show()
 	{
-		System.out.println(rollNum);
+		//System.out.println(rollNum);
 		fill (255);
 		rect (myX,myY,75,75,10);
 
@@ -79,14 +85,15 @@ class Dot//models one single dice cube
 
 			fill(0);
 			ellipse (myX+38, myY+38, 15, 15);
-			//score=score+1;
+			score=score+rollNum;
+			System.out.println(score);
 			 }
 
 		if (rollNum==2){
 			fill(0,0,0);
 			ellipse (myX+15, myY+15, 15, 15);
 			ellipse (myX+61, myY+61, 15, 15);
-		//	score=score+2; 
+			score=score+2; 
 	}
 		
 		 if (rollNum==3) {
@@ -94,7 +101,7 @@ class Dot//models one single dice cube
 			ellipse (myX+15, myY+15, 15, 15);
 			ellipse (myX+38, myY+38, 15, 15);
 			ellipse (myX+61, myY+61, 15, 15);
-			//score=score+3;
+			score=score+3;
 			 }
 
 		if (rollNum==4){
@@ -103,7 +110,7 @@ class Dot//models one single dice cube
 			ellipse (myX+15, myY+61, 15, 15);
 			ellipse (myX+61, myY+15, 15, 15);
 			ellipse (myX+61, myY+61, 15, 15);
-			//score=score+4;	
+			score=score+4;	
 		}
 
 		if (rollNum==5){
@@ -113,7 +120,7 @@ class Dot//models one single dice cube
 			ellipse (myX+61, myY+15, 15, 15);
 			ellipse (myX+61, myY+61, 15, 15);
 			ellipse (myX+38, myY+38, 15, 15);
-			//score=score+5; 
+			score=score+5; 
 		}	
 		
 		if (rollNum==6){
@@ -125,19 +132,10 @@ class Dot//models one single dice cube
 			
 			ellipse (myX+15, myY+38, 15, 15);
 			ellipse (myX+61, myY+38, 15, 15);
-			//score=score+6; 
+			score=score+6; 
 		}
-
 	}
-
-	public void scoreTotal()
-	{
-		score=0;
-        score= score+rollNum;
-		fill(0);
-		textSize(25);
-		text("Total Roll:"+score,150,50);
-	}
+	
 }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "Dice" };
