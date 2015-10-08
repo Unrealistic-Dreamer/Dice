@@ -86,7 +86,7 @@ class Dot
 			fill(0);
 			ellipse (myX+38, myY+38, 15, 15);
 			score=score+rollNum;
-			System.out.println(score);
+			
 			 }
 
 		if (rollNum==2){
